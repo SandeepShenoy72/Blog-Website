@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<center><div>
+  <form action="/compose" action="GET">
+    <button class="btn btn-primary btn-lg matter">Compose</button>
+  </form>  
+</div></center>
+
+
+<h1>Home</h1>
+<p><%=content1%></p>
+
+
+<%   postNews.forEach((item) => {  %>
+  <h1><%=(item.blogTitle)%></h1>
+    <p><%=item.blogPost.substring(0,100) + "..."%></p>
+     <a href="/post/<%=item._id%>">Read More</a>
+<%});%>
+
+
+
+<%- include("partials/footer") -%>
